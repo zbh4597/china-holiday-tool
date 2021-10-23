@@ -389,7 +389,10 @@ let data = [
     { day: 31, holiday: false, saturday: false, sunday: false },
   ],
 ];
-let today = new URLSearchParams(window.location.search).get("today");
+let date = new Date();
+let today =
+  new URLSearchParams(window.location.search).get("today") ||
+  date.getFullYear() + (date.getMonth + 1) + date.getDate();
 today = today.replace("-", "");
 
 let year = today.substring(0, 4);
