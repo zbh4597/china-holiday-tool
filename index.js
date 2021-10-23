@@ -392,7 +392,7 @@ let data = [
 let date = new Date();
 let today =
   new URLSearchParams(window.location.search).get("today") ||
-  date.getFullYear() + (date.getMonth + 1) + date.getDate();
+  "" + date.getFullYear() + (date.getMonth() + 1) + date.getDate();
 today = today.replace("-", "");
 
 let year = today.substring(0, 4);
