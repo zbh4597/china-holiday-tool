@@ -19,5 +19,5 @@ function reqListener() {
 
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
-oReq.open("GET", "/china-holidays-" + year + ".json");
+oReq.open("GET", "china-holidays-" + year + ".json");
 oReq.send();
