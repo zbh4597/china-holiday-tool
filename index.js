@@ -12,9 +12,7 @@ function reqListener() {
   console.log(this.responseText);
   let data = JSON.parse(this.responseText);
   let dayData = data[month - 1][day - 1];
-  document.write(
-    !(dayData.holiday || dayData.saturday || dayData.sunday) ? 1 : ""
-  );
+  document.write(dayData.holiday || dayData.saturday || dayData.sunday);
 }
 
 var oReq = new XMLHttpRequest();
