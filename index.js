@@ -1,12 +1,18 @@
-let date = new Date();
-let today =
-  new URLSearchParams(window.location.search).get("today") ||
-  "" + date.getFullYear() + (date.getMonth() + 1) + date.getDate();
-today = today.replace("-", "");
+let year, month, day;
 
-let year = today.substring(0, 4);
-let month = today.substring(4, 6);
-let day = today.substring(6, 8);
+let today = new URLSearchParams(window.location.search).get("today");
+
+if (today) {
+  today = today.replace("-", "");
+  year = parseInt(today.substring(0, 4), 10);
+  month = parseInt(today.substring(4, 6), 10);
+  day = parseInt(today.substring(6, 8), 10);
+} else {
+  let date = new Date();
+  year = date.getFullYear();
+  month = date.getMonth() + 1;
+  day = date.getDate();
+}
 
 function reqListener() {
   console.log(this.responseText);
